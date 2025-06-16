@@ -1,0 +1,10 @@
+<div class="payment-class">
+    <label for="Number">Reciever phoneNumber</label>
+    <input type="number" required unique>
+
+    <div>Enter the amount
+        <input type="number" [(ngModel)]="amount">
+        <button (click)="SendMoney(amount)">send</button>
+    </div>
+
+</div>
