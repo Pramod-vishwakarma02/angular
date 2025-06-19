@@ -19,7 +19,7 @@ export class Signupform {
   data: any;
   
 
-  onsignupSubmit(form: Signupform){
+  onsignupSubmit(){
     alert('success!! :-)\n\n' + JSON.stringify(this.signupModel))
     this.myservice.getDataBySignup(this.signupModel).subscribe(data=>{
       this.data=data.result
