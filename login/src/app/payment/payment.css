@@ -1,0 +1,57 @@
+/* Payment Section Container */
+.payment-class {
+  background-color: #fefefe;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Label */
+.payment-class label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Inputs */
+.payment-class input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.payment-class input[type="number"]:focus {
+  border-color: #5a67d8;
+  outline: none;
+}
+
+/* Amount Section */
+.payment-class div {
+  margin-top: 10px;
+}
+
+/* Send Button */
+.payment-class button {
+  padding: 10px 20px;
+  background-color: #5a67d8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.payment-class button:hover {
+  background-color: #434190;
+}

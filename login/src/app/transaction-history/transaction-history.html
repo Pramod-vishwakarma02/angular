@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="card transaction-card p-4">
     <h3 class="mb-4">Transaction History</h3>
     <div class="table-responsive">
@@ -32,34 +32,46 @@
       </table>
     </div>
   </div>
-</div>
+</div> -->
 
 
-<!-- <table
-    [value]="data";
-    [paginator]="true";
-    [rows]="5";
-    [tableStyle]="{ 'min-width': '50rem' }";
-    [rowsPerPageOptions]="[5, 10, 20]";>
+ <p-table
+  [value]="data"
+  [paginator]="true"
+  [rows]="5"
+  [rowsPerPageOptions]="[5, 10, 20]"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  class="custom-transaction-table"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>#</th>
+      <th>Date</th>
+      <th>Transaction ID</th>
+      <th>Amount</th>
+      <th>Type</th>
+      <th>Status</th>
+    </tr>
+  </ng-template>
 
-
-    <ng-template #header>
-        <tr>
-            <th>tId</th>
-            <th>Date</th>
-            <th>Transaction ID</th>
-            <th>Amount</th>
-            <th>Type</th>
-            <th>Status</th>
-        </tr>
-    </ng-template>
-    <ng-template #body let-txn>
-        <tr>
-            <th>{{ txn.transactionId }}</th>
-            <td>{{ txn.date }}</td>
-            <td>{{ txn.id }}</td>
-            <td>₹{{ txn.amount }}</td>
-            <td>{{ txn.type }}</td>
-        </tr>
-    </ng-template>
-</table> -->
+  <ng-template pTemplate="body" let-txn let-i="rowIndex">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ txn.date }}</td>
+      <td>{{ txn.id }}</td>
+      <td>₹{{ txn.amount }}</td>
+      <td>{{ txn.type }}</td>
+      <td>
+        <span
+          [ngClass]="{
+            'status-success': txn.status === 'Success',
+            'status-pending': txn.status === 'Pending',
+            'status-failed': txn.status === 'Failed'
+          }"
+        >
+          {{ txn.status }}
+        </span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

@@ -1,0 +1,55 @@
+.custom-transaction-table {
+  margin: 30px auto;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  background: white;
+}
+
+/* Header */
+.custom-transaction-table th {
+  background-color: #f4f6f8;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px;
+  color: #333;
+}
+
+/* Body Rows */
+.custom-transaction-table td {
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Alternating Rows */
+.custom-transaction-table .p-datatable-tbody > tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Row Hover */
+.custom-transaction-table .p-datatable-tbody > tr:hover {
+  background-color: #eef3fa;
+}
+
+/* Status Styling */
+.status-success {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.status-failed {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Pagination Styling */
+::ng-deep .p-paginator {
+  justify-content: center;
+  margin-top: 15px;
+}

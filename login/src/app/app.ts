@@ -11,7 +11,7 @@ import { Dashboard } from './dashboard/dashboard';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Loginpage,CommonModule,Signupform,Payment,AddMoney,TransactionHistory,Dashboard],
+  imports: [RouterOutlet,Loginpage,CommonModule,Signupform,Payment,AddMoney,Dashboard,TransactionHistory],
   providers: [Myservice],
   templateUrl: './app.html',
   styleUrl: './app.css'

@@ -1,0 +1,106 @@
+/* Signup Container */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Signup Form Card */
+.signup-form {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Heading */
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Label Styles */
+.signup-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Input Fields */
+.signup-form .form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+/* Input Focus */
+.signup-form .form-control:focus {
+  border-color: #5a67d8;
+  outline: none;
+}
+
+/* Invalid Fields */
+.signup-form .is-invalid {
+  border-color: #e53e3e;
+}
+
+/* Gender Radio Buttons */
+.Gender-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.Gender-options label {
+  font-weight: 400;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Submit Button */
+.signup-form .btn-primary {
+  background-color: #5a67d8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.signup-form .btn-primary:hover {
+  background-color: #434190;
+}
+
+/* Already have an account link */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.login-link a {
+  color: #5a67d8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
