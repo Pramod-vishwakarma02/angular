@@ -5,6 +5,7 @@ import { Payment } from './payment/payment';
 import { AddMoney } from './add-money/add-money';
 import { Dashboard } from './dashboard/dashboard';
 import { TransactionHistory } from './transaction-history/transaction-history';
+import { Sidebar } from './sidebar/sidebar';
 
 export const routes: Routes = [
     {path:'', redirectTo: 'loginform', pathMatch:'full'},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path:'addmoney', component:AddMoney},
     {path:'dashboard', component:Dashboard},
     {path:'transactionHistory', component:TransactionHistory},
+    {path:'sidebar',component:Sidebar}
 ];
 
