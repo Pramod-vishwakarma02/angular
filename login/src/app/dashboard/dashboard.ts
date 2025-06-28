@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule,FormsModule],
-  templateUrl: './dashboard.html',
+  templateUrl:'./dashboard.html',
   styleUrl: './dashboard.css'
 })
 export class Dashboard {
@@ -15,20 +15,20 @@ amount : number | undefined;
 data:any;
 constructor(private myservice: Myservice){}
 
-walletMoney(): void{
-this.myservice.showMoney(this.userPhonenumber).subscribe({
-  next: (data: { result: any; response: any; })=>{
-    this.data=data.result
-    alert(data.response?? 'data fetch succesfully')
-  }
-})
-}
+
 
 ngOnInit():void{
 
   this.userPhonenumber= sessionStorage.getItem("number")
   // this.userPhone = JSON.stringify (sessionStorage.getItem("number"));
-  console.log(sessionStorage.getItem('number'))
-  this.walletMoney();
+  // console.log(sessionStorage.getItem('number'))
+  // this.walletMoney();
+  this.myservice.showMoney(this.userPhonenumber).subscribe({
+  next: (data)=>{
+    console.log(this.amount);
+    this.amount=data.result.amount;
+  }
+})
+
 }
 }

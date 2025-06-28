@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Output, output } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
+// import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Loginpage } from '../loginpage/loginpage';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -9,19 +11,20 @@ import { Loginpage } from '../loginpage/loginpage';
   styleUrl: './sidebar.css'
 })
 export class Sidebar {
-  constructor(private  router: Router){}
-  
-  @Output() logicEvent = new EventEmitter<string>();
-  logout()
-  {
-    sessionStorage.removeItem('number');
-    sessionStorage.removeItem('isloggedin')
-    this.router.navigate(['./Loginpage']);
-    this.send(false);
+  constructor(private router: Router){}
 
-  }
-  send(val:any){
-    this.logicEvent.emit(val);
-  }
+@Output() logicEvent = new EventEmitter<string>();
+logout()
+{
+  sessionStorage.removeItem('number');
+  sessionStorage.removeItem('isloggedin')
+  this.router.navigate(['/login']);
+  this.send(true);
+}
+
+send(val:any){
+  this.logicEvent.emit(val);
+}
+
 
 }

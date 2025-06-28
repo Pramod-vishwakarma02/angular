@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { loginModel } from '../myservice';
+import { Myservice } from '../myservice';
 
 @Component({
   selector: 'app-loginpage',
@@ -17,18 +17,24 @@ export class Loginpage {
   data: any;
   myservice: any;
 
-  onSubmit(){
-    alert('success!! :-)\n\n' +JSON.stringify(this.loginModel))
-  }
-
-  constructor(private router: Router, ){}
   
-  onLoginSubmit(form:loginModel){
-    this.myservice.login(form).subscribe((data: { result: any; response: any; })=>{
+
+  constructor(private router: Router, public myService:Myservice ){}
+  
+  onLoginSubmit(){
+    this.myService.getdatabylogin(this.loginModel).subscribe((data: { result: any; response: any; })=>{
       this.data=data.result
+      console.log(data)
       alert(data.response);
-      sessionStorage.setItem("number",this.data.phoneNumber)
+      sessionStorage.setItem('number',data.result.phoneNumber);
+      this.router.navigate(['/dashboard']);
     })
   }
+
+  gotosignup(){
+    this.router.navigate(['/signupPage']);
+  }
+
+  
 
 }

@@ -1,57 +1,76 @@
-/* Payment Section Container */
-.payment-class {
-  background-color: #fefefe;
-  padding: 30px;
-  margin: 40px auto;
+/* Base reset & box sizing */
+* {
+  box-sizing: border-box;
+  
+}
+
+/* Form container */
+#payMoney {
   max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+  
 }
 
-/* Label */
-.payment-class label {
-  display: block;
+/* Title */
+#payMoney h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
-  font-size: 1rem;
+  text-align: center;
+  color: #2a2a2a;
 }
 
-/* Inputs */
-.payment-class input[type="number"] {
+/* Form groups */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+/* Inputs & select styling */
+#payMoney select,
+#payMoney input[type="number"] {
   width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
   border: 1px solid #ccc;
-  font-size: 15px;
-  transition: border-color 0.3s;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.payment-class input[type="number"]:focus {
-  border-color: #5a67d8;
+/* Focus states */
+#payMoney select:focus,
+#payMoney input[type="number"]:focus {
   outline: none;
+  border-color: #3b86d1;
+  box-shadow: 0 0 0 3px rgba(59, 134, 209, 0.15);
 }
 
-/* Amount Section */
-.payment-class div {
-  margin-top: 10px;
-}
-
-/* Send Button */
-.payment-class button {
-  padding: 10px 20px;
-  background-color: #5a67d8;
+/* Button styling */
+#payMoney button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #3b86d1;
   border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 15px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 10px;
+  transition: background 0.2s;
 }
 
-.payment-class button:hover {
-  background-color: #434190;
+#payMoney button:hover {
+  background-color: #336fb2;
 }

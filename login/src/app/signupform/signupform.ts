@@ -1,34 +1,41 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormsModule, Validators } from '@angular/forms';
-import { Myservice } from '../myservice';
+import { FormsModule } from '@angular/forms';
+import { Myservice, signupModel } from '../myservice';
+
 
 @Component({
   selector: 'app-signupform',
-  imports: [CommonModule,FormsModule],
-  templateUrl:'./signupform.html',
-  styleUrl:'./signupform.css'
+  imports: [CommonModule, FormsModule],
+  templateUrl: './signupform.html',
+  styleUrl: './signupform.css'
 })
 export class Signupform {
-  title='angularProject';
-  signupModel: any;
+  title = 'angularProject';
+  SignupModel: any;
 
+  constructor(private myservice: Myservice) { }
 
-  constructor(private myservice: Myservice){}
-
+  // SignupModel: any ={};
   data: any;
-  
 
-  onsignupSubmit(){
-    alert('success!! :-)\n\n' + JSON.stringify(this.signupModel))
-    this.myservice.getDataBySignup(this.signupModel).subscribe(data=>{
-      this.data=data.result
-      alert(data.response);
-      sessionStorage.setItem("number",this.data.phoneNumber)
-      
+  signupModel: signupModel = new signupModel();
 
-    })
-  }
 
+
+
+  onSubmit() {
+    alert('success!! :-) \n\n' + JSON.stringify(this.signupModel))
+
+
+     this.myservice.getDataBySignup(this.signupModel).subscribe(data=>{
+      this.data = data?.result?? null;
+      console.log(data);
+      alert("signup successfull!!"+ data.response);
+     })
+    }
 
 }
+
+
+

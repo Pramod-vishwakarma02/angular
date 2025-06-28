@@ -1,94 +1,124 @@
-/* Dashboard Container */
-.dashboard-container {
-  background: #f8f9fa;
-  min-height: 100vh;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  font-family: 'Segoe UI', sans-serif;
-}
 
-/* Top Header: Dashboard & Balance */
-.dashboard-class {
-  border-bottom: 2px solid #dee2e6;
-  margin-bottom: 30px;
-}
 
-.dashboard-class h1 {
-  font-size: 2rem;
-  color: #343a40;
-  margin-bottom: 5px;
-}
-
-.dashboard-class p {
-  color: #6c757d;
-  margin-bottom: 0;
-}
-
-.balance-card .card {
-  border: 2px solid #28a745;
-  background-color: #e9f7ef;
-}
-
-.balance-card .card-title {
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.balance-card .card-text {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #28a745;
-}
-
-/* Stats Cards */
-.card-container .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.card-container .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.card-container .card h5 {
-  font-size: 1.2rem;
-  color: #007bff;
-}
-
-.card-container .card p {
-  font-size: 0.95rem;
-  color: #495057;
-  margin-bottom: 0;
-}
-
-.card-container a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Footer Section */
-.row .card {
-  border: none;
-  border-radius: 10px;
-  background-color: #ffffff;
-  transition: box-shadow 0.3s ease;
-}
-
-.row .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.row .card-body p {
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   margin: 0;
-  font-weight: 500;
-  color: #dc3545;
+  background-color: #f4f6f8;
+  color: #2a2a2a;
 }
-
-.row .card-body a {
+a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Layout */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+.col-md-3,
+.col-md-4,
+.col-md-8 {
+  padding: 0.5rem;
+}
+.col-md-3 { flex: 0 0 25%; }
+.col-md-4 { flex: 0 0 33.33%; }
+.col-md-8 { flex: 0 0 66.67%; }
+
+@media (max-width: 768px) {
+  .col-md-3, .col-md-4, .col-md-8 {
+    flex: 0 0 100%;
+  }
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.dashboard-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.dashboard-header p {
+  color: #6c757d;
+}
+
+/* Card Styles */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Balance Card */
+.balance-card .card {
+  border-left: 4px solid #3b86d1;
+}
+.balance-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.balance-card .card-title i {
+  margin-right: 0.5rem;
+}
+.balance-card .card-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Stat Cards */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.card-title i {
+  margin-right: 0.5rem;
+  color: #3b86d1;
+}
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Footer Cards */
+.footer-card .card {
+  margin-bottom: 1rem;
+}
+.footer-card .card-body p {
+  font-weight: 500;
+  color: #3b86d1;
+  margin: 0;
+}
+.footer-card .card:hover .card-body p {
+  text-decoration: underline;
+}
+
+/* Icon Placeholders */
+/* Replace these with your SVG font or icon font */
+.icon-wallet::before         { content: '💼'; }
+.icon-plus-circle::before   { content: '➕'; }
+.icon-send::before          { content: '📤'; }
+.icon-history::before       { content: '🕒'; }
+.icon-user-plus::before     { content: '👤'; }
