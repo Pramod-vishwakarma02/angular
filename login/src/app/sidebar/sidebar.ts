@@ -1,12 +1,15 @@
 // import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 // import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TableModule } from 'primeng/table';
 
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [CommonModule,FormsModule,TableModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })

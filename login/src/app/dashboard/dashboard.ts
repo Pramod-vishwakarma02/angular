@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Myservice } from '../myservice';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,TableModule],
   templateUrl:'./dashboard.html',
   styleUrl: './dashboard.css'
 })
