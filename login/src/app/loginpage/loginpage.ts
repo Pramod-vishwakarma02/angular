@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Myservice } from '../myservice';
@@ -11,6 +11,7 @@ import { Myservice } from '../myservice';
   styleUrl: './loginpage.css'
 })
 export class Loginpage {
+   @Output() logicEvent = new EventEmitter<boolean>();
   loginModel: any={};
 
   submitted = false;
@@ -22,11 +23,14 @@ export class Loginpage {
   constructor(private router: Router, public myService:Myservice ){}
   
   onLoginSubmit(){
-    this.myService.getdatabylogin(this.loginModel).subscribe((data: { result: any; response: any; })=>{
+    this.myService.getdatabylogin(this.loginModel).subscribe(data=>{
       this.data=data.result
       console.log(data)
       alert(data.response);
+      
       sessionStorage.setItem('number',data.result.phoneNumber);
+       this.logicEvent.emit(true);
+
       this.router.navigate(['/dashboard']);
     })
   }
@@ -36,5 +40,7 @@ export class Loginpage {
   }
 
   
+  }
+  
 
-}
+

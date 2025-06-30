@@ -1,5 +1,9 @@
+<!-- <div *ngIf="isloggedin != true">
+  <app-loginpage (logicEvent)="received($event)"></app-loginpage>
+</div>
 
-<!-- Only show sidebar/dashboard layout when logged in -->
+
+
 <div *ngIf="isloggedin == true" class="row">
   <div class="col-2">
     <app-sidebar (logicEvent)="received($event)"></app-sidebar>
@@ -7,12 +11,23 @@
   <div class="col-10">
     <router-outlet></router-outlet>
   </div>
-</div>
+</div> -->
 
- <!-- Otherwise, show login/signup based on route  -->
+
+
+
+<!-- Show Login Page if not logged in -->
 <div *ngIf="isloggedin != true">
-  <router-outlet></router-outlet>
+  <app-loginpage (logicEvent)="received($event)"></app-loginpage>
 </div>
- 
 
+<!-- Sidebar + Dashboard layout when logged in -->
+<div *ngIf="isloggedin == true" class="app-container">
+  <div class="sidebar-container">
+    <app-sidebar (logicEvent)="received($event)"></app-sidebar>
+  </div>
+  <div class="dashboard-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 

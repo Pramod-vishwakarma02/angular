@@ -6,7 +6,7 @@ import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-transaction-history',
-  imports: [CommonModule,FormsModule, TableModule],
+  imports: [CommonModule, FormsModule, TableModule],
   templateUrl: './transaction-history.html',
   styleUrl: './transaction-history.css'
 })
@@ -16,7 +16,7 @@ export class TransactionHistory {
   data2: any = null;
   transactionModel: transactionModel = new transactionModel();
   userphoneNumber: any;
-  
+
   constructor(private myservice: Myservice) { }
 
   seeTransaction(): void {
@@ -47,7 +47,7 @@ export class TransactionHistory {
 
     this.userphoneNumber = sessionStorage.getItem("number");
     if (this.userphoneNumber) {
-      this.seeTransaction(); 
+      this.seeTransaction();
     } else {
       alert('Phone number not found.');
     }
@@ -65,8 +65,6 @@ export class TransactionHistory {
 
   }
 
-
-
   deleteAll(): void {
     // console.log("Deleting history for number:", phoneNumber);
     this.myservice.deleteAll(this.userphoneNumber).subscribe(data2 => {
@@ -74,9 +72,9 @@ export class TransactionHistory {
       this.seeTransaction();
       alert(data2.response ?? 'transaction history deleted successfully');
     }
-      
+
     )
   }
 
-  
+
 }

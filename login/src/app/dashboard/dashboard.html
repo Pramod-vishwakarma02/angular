@@ -1,77 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard</title>
-  
-</head>
-<body>
-  <div class="dashboard-container">
-    <header class="dashboard-header">
-      <div>
-        <h1>Skytm Dashboard</h1>
-        <p>Your wallet is active.</p>
+<div class="col-10">
+  <header>
+    <div>
+      <h1>Skytm Dashboard</h1>
+      <p>Your wallet is active.</p>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title"><i class="icon-wallet"></i> Current Balance</h2>
+        <p class="card-text">₹{{ amount }}</p>
       </div>
-      <div class="balance-card card">
+    </div>
+  </header>
+
+  <section class="row card-container">
+    <div class="col-md-3">
+      <a href="/AddMoney" class="card card-link">
         <div class="card-body">
-          <h2 class="card-title"><i class="icon-wallet"></i> Current Balance</h2>
-          <p class="card-text">₹{{ amount }}</p>
+          <h3 class="card-title"><i class="icon-plus-circle"></i> Add Money</h3>
+          <p class="card-text">Deposit funds into your wallet</p>
         </div>
-      </div>
-    </header>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="/paymentMoney" class="card card-link">
+        <div class="card-body">
+          <h3 class="card-title"><i class="icon-send"></i> Pay Money</h3>
+          <p class="card-text">Transfer funds using phone number</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="/history" class="card card-link">
+        <div class="card-body">
+          <h3 class="card-title"><i class="icon-history"></i> Transaction History</h3>
+          <p class="card-text">View all your transactions</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="/signupform" class="card card-link">
+        <div class="card-body">
+          <h3 class="card-title"><i class="icon-user-plus"></i> Sign Up / Log In</h3>
+          <p class="card-text">Manage your account</p>
+        </div>
+      </a>
+    </div>
+  </section>
 
-    <section class="row card-container">
-      <div class="col-md-3">
-        <a href="/AddMoney" class="card card-link">
-          <div class="card-body">
-            <h3 class="card-title"><i class="icon-plus-circle"></i> Add Money</h3>
-            <p class="card-text">Deposit funds into your wallet</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="/paymentMoney" class="card card-link">
-          <div class="card-body">
-            <h3 class="card-title"><i class="icon-send"></i> Pay Money</h3>
-            <p class="card-text">Transfer funds using phone number</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="/history" class="card card-link">
-          <div class="card-body">
-            <h3 class="card-title"><i class="icon-history"></i> Transaction History</h3>
-            <p class="card-text">View all your transactions</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="/signupform" class="card card-link">
-          <div class="card-body">
-            <h3 class="card-title"><i class="icon-user-plus"></i> Sign Up / Log In</h3>
-            <p class="card-text">Manage your account</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <footer class="row footer-card">
-      <div class="col-md-8">
-        <a href="/history" class="card card-link">
-          <div class="card-body">
-            <p>Delete all transaction history</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="/history" class="card card-link">
-          <div class="card-body">
-            <p>Delete by transaction ID</p>
-          </div>
-        </a>
-      </div>
-    </footer>
-  </div>
-</body>
-</html>
+  <footer class="row footer-card">
+    <div class="col-md-8">
+      <a href="/history" class="card card-link">
+        <div class="card-body">
+          <p>Delete all transaction history</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="/history" class="card card-link">
+        <div class="card-body">
+          <p>Delete by transaction ID</p>
+        </div>
+      </a>
+    </div>
+  </footer>
+</div>

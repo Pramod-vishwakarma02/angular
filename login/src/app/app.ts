@@ -10,10 +10,11 @@ import { Myservice, transactionModel } from './myservice';
 // import { Dashboard } from './dashboard/dashboard';
 import { Sidebar } from './sidebar/sidebar';
 import { FormsModule } from '@angular/forms';
+import { Loginpage } from './loginpage/loginpage';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,FormsModule,Sidebar],
+  imports: [RouterOutlet,CommonModule,FormsModule,Sidebar,Loginpage],
   providers: [Myservice],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -21,6 +22,8 @@ import { FormsModule } from '@angular/forms';
 export class App {
   protected title = 'login';
   isloggedin=false;
+
+  
   ngOnInit(): void{
     this.isloggedin=Boolean(sessionStorage.getItem("isloggedin"))
   }
