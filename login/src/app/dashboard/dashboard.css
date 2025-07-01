@@ -1,91 +1,109 @@
-/* Offset the sidebar */
-:host {
-  display: block;
-  margin-left: 250px;
+/* Reset some basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.col-10 {
   padding: 2rem;
-  background-color: #f0f4f8;
+  background-color: #f5f8fc;
   min-height: 100vh;
 }
 
-/* === Header Section === */
-header {
-  background: linear-gradient(to right, #2980b9, #3498db);
-  color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Header Section */
 header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
   margin-bottom: 0.5rem;
 }
 
+header p {
+  color: #2ecc71;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Balance Card */
 .card {
-  background-color: white;
-  color: #333;
-  margin-top: 1rem;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* === Cards Section === */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.card-link {
+  background: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
 }
 
-.card-link:hover {
+.card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .card-body {
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #2980b9;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 0.5rem;
 }
 
 .card-text {
   font-size: 0.95rem;
-  color: #555;
+  color: black;
 }
 
-/* === Footer Delete Cards === */
+.card-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.card-link {
+  flex: 1 1 calc(25% - 1rem);
+  min-width: 220px;
+  display: block;
+  text-decoration: none;
+}
+
+.footer-card {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
 .footer-card .card {
-  background-color: #f9f9f9;
-  margin-bottom: 1rem;
-  padding: 0.75rem 1.25rem;
-  text-align: center;
+  background: #ffecec;
+  border-left: 4px solid #e74c3c;
 }
 
 .footer-card .card-body p {
-  margin: 0;
-  color: #8e44ad;
+  color: #e74c3c;
   font-weight: 500;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
-  :host {
-    margin-left: 0;
-    padding: 1rem;
+
+@media (max-width: 992px) {
+  .card-link {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .card-link {
+    flex: 1 1 100%;
   }
 
-  .card-container {
+  .footer-card {
     flex-direction: column;
   }
 }

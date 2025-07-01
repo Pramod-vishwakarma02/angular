@@ -19,10 +19,8 @@ export class Sidebar {
 @Output() logicEvent = new EventEmitter<string>();
 logout()
 {
-  sessionStorage.removeItem('number');
-  sessionStorage.removeItem('isloggedin')
-  this.router.navigate(['/login']);
-  this.send(true);
+  sessionStorage.clear(); // or sessionStorage.removeItem('isloggedin');
+    this.router.navigate(['/loginpage']);
 }
 
 send(val:any){

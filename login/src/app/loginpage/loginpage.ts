@@ -29,6 +29,7 @@ export class Loginpage {
       alert(data.response);
       
       sessionStorage.setItem('number',data.result.phoneNumber);
+       sessionStorage.setItem('isloggedin', "true");
        this.logicEvent.emit(true);
 
       this.router.navigate(['/dashboard']);

@@ -22,7 +22,6 @@ import { Loginpage } from './loginpage/loginpage';
 export class App {
   protected title = 'login';
   isloggedin=false;
-
   
   ngOnInit(): void{
     this.isloggedin=Boolean(sessionStorage.getItem("isloggedin"))
