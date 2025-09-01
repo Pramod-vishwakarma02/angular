@@ -19,6 +19,7 @@
 <!-- Show Login Page if not logged in -->
 <div *ngIf="isloggedin != true">
   <app-loginpage (logicEvent)="received($event)"></app-loginpage>
+  
 </div>
 
 <!-- Sidebar + Dashboard layout when logged in -->
@@ -27,6 +28,7 @@
     <app-sidebar (logicEvent)="received($event)"></app-sidebar>
   </div>
   <div class="dashboard-container">
+    
     <router-outlet></router-outlet>
   </div>
 </div>

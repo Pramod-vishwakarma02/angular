@@ -15,18 +15,18 @@ export class Myservice {
   
 
   constructor(private http: HttpClient) { }
-  url='https://skytm-api.azurewebsites.net'
+  url='https://localhost:7220/swagger/index.html'
   
   getdatabylogin(data:loginModel):Observable<any>{
     return this.http.post<any>(this.url+ '/api/Auth/login',data)
   }
 
   getDataBySignup(data:signupModel):Observable<any>{
-    return this.http.post<any>(this.url+'/api/Auth/signup',data)
+    return this.http.post<any>(this.url+'/api/Auth/Register',data)
   }
 
   Payment(data:SendMoneyModel):Observable<any>{
-    return this.http.post<any>(this.url+'/api/Transactions/pay',data,
+    return this.http.post<any>(this.url+'/api/Transaction/PayMoney',data,
       {
       headers: { 'Content-Type': 'application/json' }
     }
@@ -37,23 +37,25 @@ export class Myservice {
     return this.http.post<any>(this.url+'/api/Wallet/add',data)
   }
   Transaction(data:transactionModel):Observable<any>{
-    return this.http.get<any>(this.url+'/api/Transactions/history?phoneNumber=' +data)
+    return this.http.get<any>(this.url+'/api/Transaction/history?phoneNumber=' +data)
   }
   deletebyid(tid: any): Observable<any>{
-    return this.http.delete<any>(this.url+'/api/Transactions/DeleteTransectionById?tid='+tid)
+    return this.http.delete<any>(this.url+'/api/Transaction/DeleteTransactionById?tid='+tid)
   }
 
   showMoney(data:any):Observable<any>{
-    return this.http.get<any>(this.url+'/api/Users/balance?phoneNumber='+data)
+    return this.http.get<any>(this.url+'/api/User/balance?phoneNumber='+data)
   }
 
   getusers(): Observable<any> {
-    return this.http.get<any>(`${this.url}/api/Users/basic-list`)
+    return this.http.get<any>(`${this.url}/api/User/all?phoneNumber=`)
   }
 
   deleteAll(phoneNumber: any): Observable<any>{
-    return this.http.delete<any>(this.url+'/api/Transactions/history?phoneNumber='+phoneNumber)
+    return this.http.delete<any>(this.url+'/api/Transaction/DeleteAllHistory?phoneNumber='+phoneNumber)
   }
+
+
 
 }
 export class loginModel
