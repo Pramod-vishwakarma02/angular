@@ -3,6 +3,7 @@ import { Component, EventEmitter, Output, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Myservice } from '../myservice';
+import { Signupform } from '../signupform/signupform';
 
 @Component({
   selector: 'app-loginpage',
@@ -37,7 +38,7 @@ export class Loginpage {
   }
 
   gotosignup(){
-    this.router.navigate(['/signupPage']);
+    this.router.navigate(['/Signupform']);
   }
 
   

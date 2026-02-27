@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 // import { Loginpage } from './loginpage/loginpage';
 import { CommonModule } from '@angular/common';
-import { Myservice, transactionModel } from './myservice';
+import { Myservice, signupModel, transactionModel } from './myservice';
 // import { Signupform } from './signupform/signupform';
 // import { Payment } from './payment/payment';
 // import { AddMoney } from './add-money/add-money';
@@ -11,6 +11,7 @@ import { Myservice, transactionModel } from './myservice';
 import { Sidebar } from './sidebar/sidebar';
 import { FormsModule } from '@angular/forms';
 import { Loginpage } from './loginpage/loginpage';
+// import { Signupform } from './signupform/signupform';
 
 @Component({
   selector: 'app-root',

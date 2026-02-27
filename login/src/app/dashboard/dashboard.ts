@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { Myservice } from '../myservice';
+import { Myservice, signupModel } from '../myservice';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
+import { Signupform } from '../signupform/signupform';
+import { Loginpage } from '../loginpage/loginpage';
 
 @Component({
   selector: 'app-dashboard',
